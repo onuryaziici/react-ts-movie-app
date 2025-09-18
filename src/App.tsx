@@ -1,13 +1,20 @@
-import Layout from './components/Layout/Layout';
-import Navbar from './components/Navbar/Navbar';
+import { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
+import MovieDetailPage from './pages/MovieDetailPage';
+import Navbar from './components/Navbar/Navbar';
 
 function App() {
+  const [searchTerm, setSearchTerm] = useState('');
+
   return (
     <>
-      <Navbar /> 
+      <Navbar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       <main style={{ padding: '1rem' }}>
-        <HomePage />
+        <Routes>
+          <Route path="/" element={<HomePage searchTerm={searchTerm} />} />
+          <Route path="/movie/:id" element={<MovieDetailPage />} />
+        </Routes>
       </main>
     </>
   );
