@@ -4,7 +4,7 @@
 
 > A modern and responsive web application for browsing, searching, and favoriting movies, built from scratch with React, TypeScript, and Tailwind CSS. This project leverages the [The Movie Database (TMDB) API](https://www.themoviedb.org/documentation/api) to provide up-to-date movie information.
 
-**[➡️ View Live Demo](https://react-ts-movie-app-demo-j064oskl2-onuryazicis-projects.vercel.app/)**
+**[➡️ View Live Demo](https://react-ts-movie-app-kappa.vercel.app/)**
 
 ---
 
