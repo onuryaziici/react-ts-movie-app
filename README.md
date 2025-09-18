@@ -1,69 +1,86 @@
-# React + TypeScript + Vite
+# React Movie App with TypeScript & Tailwind CSS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React Movie App Demo](./public/demo.png)
 
-Currently, two official plugins are available:
+> A modern and responsive web application for browsing, searching, and favoriting movies, built from scratch with React, TypeScript, and Tailwind CSS. This project leverages the [The Movie Database (TMDB) API](https://www.themoviedb.org/documentation/api) to provide up-to-date movie information.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**[➡️ View Live Demo](https://react-ts-movie-app-demo-j064oskl2-onuryazicis-projects.vercel.app/)**
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ✨ Features
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Browse Popular Movies**: View a grid of the most popular movies currently trending.
+- **Real-time Search**: Search for movies by title with instant results.
+- **Optimized API Requests**: Implemented a custom `useDebounce` hook to prevent excessive API calls while typing.
+- **Detailed Movie Information**: Click on any movie to see a dedicated page with its poster, summary, rating, runtime, and more.
+- **Favorites System**: Add or remove movies from a personal "Favorites" list.
+- **Persistent Data**: Favorites are saved to the browser's `localStorage`, so they persist across sessions.
+- **Fully Responsive Design**: The UI is built with Tailwind CSS and adapts beautifully to all screen sizes, from mobile to desktop.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 🚀 Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **Framework**: [React](https://reactjs.org/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Routing**: [React Router DOM](https://reactrouter.com/)
+- **API Communication**: [Axios](https://axios-http.com/)
+- **Data Source**: [The Movie Database (TMDB) API](https://www.themoviedb.org/documentation/api)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🛠️ Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+To get a local copy up and running, follow these simple steps.
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Prerequisites
+
+- Node.js (v18 or higher recommended)
+- npm or yarn
+
+### Installation
+
+1.  **Clone the repository:**
+
+    ```sh
+    git clone https://github.com/onuryaziici/react-ts-movie-app.git
+    ```
+
+2.  **Navigate to the project directory:**
+
+    ```sh
+    cd react-ts-movie-app
+    ```
+
+3.  **Install NPM packages:**
+
+    ```sh
+    npm install
+    ```
+
+4.  **Set up environment variables:**
+
+    - Create a new file named `.env.local` in the root of your project.
+    - Get a free API key from [The Movie Database (TMDB)](https://www.themoviedb.org/settings/api).
+    - Add your API key to the `.env.local` file:
+      ```
+      VITE_API_KEY="YOUR_TMDB_API_KEY_HERE"
+      ```
+
+5.  **Run the development server:**
+    ```sh
+    npm run dev
+    ```
+    The application will be available at `http://localhost:5173`.
+
+## 📈 Future Improvements
+
+While the core functionality is complete, here are some ideas for future enhancements:
+
+- **Dedicated Favorites Page**: Create a new route (`/favorites`) to display all favorited movies.
+- **Pagination**: Implement pagination for movie lists to handle large numbers of results.
+- **Advanced Loading & Error States**: Use skeleton loaders for a better user experience while data is being fetched.
+- **Genre Filtering**: Allow users to filter movies by genre.
+
+## 📄 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
